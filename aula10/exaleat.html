@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício DOM</title>
+    <style>
+        div#txt1 {
+            font: normal 18px Arial;
+            background-color: rgb(252, 41, 41);
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        div#txt2 {
+            font: normal 18px Arial;
+            background-color: rgb(54, 54, 255);
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="txt1">Clique em mim!</div>
+    <div id="txt2">Passe o mouse!</div>
+    <script>
+        var txt1 = window.document.getElementById('txt1')
+        txt1.addEventListener('mousedown', pressionar)
+        txt1.addEventListener('mouseup', soltar)
+
+        var txt2 = window.document.getElementById('txt2')
+        txt2.addEventListener('mouseenter', entrar)
+        txt2.addEventListener('mouseout', sair)
+
+        function pressionar(){
+            
+            txt1.innerText = 'Solte-me!'
+            txt1.style.background = 'green'
+        }
+
+        function soltar() {
+            txt1.innerText = 'Obrigado!'
+            txt1.style.background = 'rgb(252, 41, 41)'
+        }
+
+        function entrar() {   
+            txt2.innerText = 'Obrigado!'
+            txt2.style.background = 'pink'
+        }
+
+        function sair() {
+            txt2.innerText = 'Passe o mouse!'
+            txt2.style.background = 'rgb(54, 54, 255)'
+        }
+    </script>
+</body>
+</html>

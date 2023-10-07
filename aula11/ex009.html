@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Registro de Nacionalidade</h1>
+    <p>Qual a sua nacionalidade?</p>
+    <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Selecionar" onclick="selecionar()">
+    <div id="res">
+        <p>Nacionalidade</p>
+    </div>
+
+    <script>
+        var nac = window.document.getElementById('txtnac')
+        var res = window.document.querySelector('div#res')
+        
+        function selecionar() {
+            if (nac = 'Brasil') {
+              res.innerHTML = `<p>Você nasceu no ${nac}</p>`
+              res.innerHTML += '<p>Você é Brasileiro!</p>'
+            } else {
+                res.innerHTML = `<p>Você nasceu no ${nac}</p>`
+                res.innerHTML += 'Você é estrangeiro!'
+            }
+        }
+    </script>
+</body>
+</html>
